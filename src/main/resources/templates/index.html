@@ -1,0 +1,32 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: Raleway">
+
+<form th:object="${uploadWrapper}" method="POST"
+      action="" enctype="multipart/form-data" style="position: absolute; left: 41.5%; top: 20%">
+
+    <span style="margin-left: 28px;">Select sorting type:</span>
+    <br/>
+    <select style="margin-left: 31px; font-family: Raleway" th:field="*{sortingType}">
+        <option th:value="''" disabled>Select sorting type</option>
+        <option th:value="'bubble'" th:text="Bubble"></option>
+        <option th:value="'heap'" th:text="Heap"></option>
+        <option th:value="'merge'" th:text="Merge"></option>
+    </select>
+    <br/>
+    <br/>
+    <span style="margin-left: 50px;">File to upload:</span>
+    <br/>
+    <input style="font-family: Raleway" th:field="*{fileData}" type="file"/>
+    <br/>
+    <br/>
+    <input type="submit"
+           style="font-family: Raleway; padding: 5px 15px; margin-left: 61px; background: darkgrey; color: black; text-underline: none; border: 0;"
+           th:value="'Upload'">
+</form>
+
+</body>
+</html>
